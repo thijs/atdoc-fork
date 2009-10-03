@@ -578,6 +578,21 @@
     </a>
   </xsl:template>
 
+  <xsl:template match="dl">
+    <dl>
+	<xsl:for-each select="dt">
+      <dt>
+	  <xsl:value-of select="@dt"/>
+      </dt>
+      <dd>
+	    <xsl:text> : </xsl:text>
+	    <xsl:apply-templates/>
+	  </dd>
+	</xsl:for-each>
+    </dl>
+    <br style="clear: both;"/>
+  </xsl:template>
+
   <xsl:template match="itemize">
     <ul>
       <xsl:apply-templates/>

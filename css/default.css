@@ -177,3 +177,29 @@ pre {
   padding-top: 1em;
   font-weight: bold;
 }
+
+dl {
+  width: 75em;
+  margin: .6em 0 1em;
+  padding: 0;
+}
+
+dt {
+  display: list-item;
+  width: 12em;
+  float: left;
+  margin: 0 0 0 2em;
+  padding: .25em;
+  font-weight: bold;
+}
+
+/* commented backslash hack for mac-ie5 \*/
+dt { clear: both; }
+/* end hack */
+
+dd {
+  float: left;
+  width: 50em;
+  margin: 0 0 0 0;
+  padding: .25em;
+}
