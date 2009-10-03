@@ -29,7 +29,15 @@
 (in-package :atdoc)
 
 (defun function-arglist (fun)
-  (swank::arglist fun))
+  (let ((arg-list (swank::arglist fun))
+        (return-list ()))
+    (dolist (arg arg-list)
+      (typecase arg
+        (list
+         (pushnew (car arg) return-list))
+        (t
+         (pushnew arg return-list))))
+    (nreverse return-list)))
 
 (defun magic-namestring (file)
   (let ((atdoc-directory (asdf:component-pathname (asdf:find-system :atdoc))))
