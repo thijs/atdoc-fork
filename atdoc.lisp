@@ -537,7 +537,7 @@
 		((eql (peek-char nil stream nil) #\})
 		  (write-char (read-char stream) out))
 		((eql (peek-char nil stream nil) #\@)
-		  (write-char c out))
+		  (write-char (read-char stream) out))
 		(t
 		  (characters handler (get-output-stream-string out))
 		  (let ((name (read-delimited-string stream "[{ :")))
